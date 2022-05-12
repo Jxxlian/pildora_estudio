@@ -1,14 +1,17 @@
 import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget'
 
 const NavBar = () => {
     return (
-        <nav className='barra_nav'>
-            <h1>Pildora <br/> estudio</h1>
+        <nav className='navBar'>
+            <h1>PILDORA <br/> ESTUDIO</h1>
             <button>Cerámica</button>
             <button>Almohadones</button>
-            <button>Contacto</button>       
+            <button>Contacto</button> 
+
+            <CartWidget />      
                 
-            <div className='redes'>
+            <div className='followMe'>
                 <h3>Seguime en <a href='#'>instagram</a></h3>
             </div> 
         </nav>

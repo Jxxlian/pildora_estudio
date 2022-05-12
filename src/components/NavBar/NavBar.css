@@ -1,31 +1,65 @@
-.barra_nav{
+.App {
+    display: flex;
+    height: 655px ;
+}
+/* ------------------- NAV BAR ------------------- */
+.navBar{
     display: flex;
     flex-direction: column;       
-    width: 250px;
-    height: 650px; /* la altura va a tener que ser modificada una vez que el sitio tenga contenido */
+    width: 300px;
+    height: 100%; 
     background-color: #161712;
-    position: relative;
-    
+    position: relative;    
 }
 
-.barra_nav h1 {
+.navBar h1 {
     color: #edfb22;
-    text-shadow: 1px 1px 2px #7c5c74;
+    text-shadow: 1px 1px 2px #fbbc1a;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 10px;
 }
 
-.barra_nav button {
+.navBar button {
+    width: 80%;
     margin-bottom: 15px;
-    width: 70%;
-    padding: 5px;
     margin-right: auto;
     margin-left: auto;
+    padding: 10px;
     background-color: #edfb22;
-    font-weight: bold;
-    border: 1px solid white;
     border-radius: 5%;
+    
+    font-weight: bold;    
+    border: 1px solid #fbbc1a;
+    text-shadow: 1px 1px 2px #fbbc1a;
+    letter-spacing: 3px;
+    
+    cursor: pointer;
 }
 
-.redes {
+.CartWidget {    
+    text-align: center;
+    margin-left: 10%;
+}
+.CartWidget h5, h6 {
+    color: white;
+    font-size: 15px;    
+}
+
+.CartWidget h5{
+    margin-bottom: 10px;    
+}
+
+.CartWidget h6{
+    display: inline;
+}
+
+.CartWidget img {
+    width: 50px;    
+    transform: scaleX(-1); /* para rotar horizontalmente la imagen */    
+}
+
+.followMe {
     position: absolute;
     bottom: 0;      
     right: 0;
@@ -33,11 +67,21 @@
     text-align: center;
 }
 
-.redes h3 {
-    font-size: 18px;    
+.followMe h3 {
+    font-size: 18px; 
+    color: white;  
+    font-style: italic; 
 }
 
-.redes h3 a {
+.followMe h3 a {
     text-decoration: none;   
-    color: #7c5c74
+    color: #fbbc1a
+}
+
+/* ------------------- main ------------------- */
+
+.greeting {
+    font-size: 50px;  
+    margin: auto;
+    font-style: italic;
 }
