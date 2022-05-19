@@ -1,0 +1,11 @@
+const SecondNavBar = () => {
+    return (
+        <>
+            <button>Ceniceros</button>
+            <button>Pipas</button>
+            <button>Decoración</button>
+        </>
+    )
+}
+
+export default SecondNavBar
