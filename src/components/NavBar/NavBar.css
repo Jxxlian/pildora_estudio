@@ -82,9 +82,14 @@
 
 /* ------------------- main ------------------- */
 
+.greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .greeting h1 {
-    font-size: 50px;  
-    margin: auto;
+    font-size: 50px;      
     font-style: italic;
 }
 
@@ -93,18 +98,18 @@
 .itemCount { 
     display: flex;
     flex-direction: column;    
-    align-items: center;
-    align-self: center;
+    align-items: center;    
 }
 
 .itemCount div {
     display: flex;    
 }
+
 .itemCount button{
     background-color: black;
-    color: #edfb22;
+    color: #fbbc1a ;
     font-weight: bold;
-    border: 3px outset #fbbc1a;
+    border: 3px outset #edfb22;
     padding: 10px;
     line-height: 0;   
 }
@@ -120,6 +125,40 @@
     text-align: center;
 }
 
-.addItem {
-    
+/* ------------------- ItemCard ------------------- */
+
+.container-items {
+    display: flex;
+    flex-direction: wrap;
 }
+
+.ItemCard {
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dotted black;
+    width: 30%;    
+    margin: 10px;  
+
+    cursor:pointer;
+}
+
+.ItemCard:hover {
+    color:#fbbc1a;
+}
+
+.ItemCard h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.ItemCard div{
+    background-color: blue;
+}
+
+.ItemCard img {
+    width: 70%;
+    max-height: 50%;  
+    border-radius: 2%;  
+}
+
