@@ -1,11 +1,13 @@
-
+import ItemCount from "../ItemCount/ItemCount"
 
 const Item = ({id, title, price, pictureURL}) => {
     return (
         <div className="ItemCard">            
-                <h1>{id}. {title}</h1>                
                 <img src={pictureURL} alt='imagen'></img>
-                <h3>${price}</h3>                       
+                <h1>{id}. {title}</h1>                                
+                <h3>${price}</h3>    
+
+                 <ItemCount stock='5' initial='1'/>                   
         </div>
     )
 }

@@ -1,17 +1,31 @@
 .App {
     display: flex;
-    height: 655px ;
+    height: 1200px ;
+    
+}
+
+.falseBody {
+    display: flex;
+    align-items: center;  
+    flex-direction: column;  
+    padding-left: 250px;
+    
 }
 
 /* ------------------- NAV BAR ------------------- */
 
 .navBar{
     display: flex;
-    flex-direction: column;       
-    width: 300px;
-    height: 100%; 
+    flex-direction: column;           
     background-color: #161712;
-    position: relative;    
+    padding: 0 15px;
+
+    /* con esto fijo el menú lateral */
+    position:fixed; 
+    top: 0;
+    bottom: 0;
+
+
 }
 
 .navBar h1 {
@@ -42,18 +56,21 @@
 .CartWidget {    
     text-align: center;
     margin-left: 10%;
+    margin-top: -20px;
+    
+    
 }
 .CartWidget h5, h6 {
     color: white;
     font-size: 15px;    
 }
 
-.CartWidget h5{
-    margin-bottom: 10px;    
+.CartWidget h5{    
+    margin-bottom: 0;    
 }
 
 .CartWidget h6{
-    display: inline;
+    display: inline;    
 }
 
 .CartWidget img {
@@ -80,24 +97,34 @@
     color: #fbbc1a
 }
 
+/* ------------------- SecondNavBar ------------------- */
+
+.SecondNavBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.SecondNavBar button {
+    width: 60%;    
+}
+
 /* ------------------- main ------------------- */
 
 .greeting {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
 }
 
-.greeting h1 {
-    font-size: 50px;      
-    font-style: italic;
+.greetingTitle {
+    font-size: 50px;
 }
 
 /* ------------------- ItemCount ------------------- */
 
 .itemCount { 
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;      
     align-items: center;    
 }
 
@@ -111,7 +138,8 @@
     font-weight: bold;
     border: 3px outset #edfb22;
     padding: 10px;
-    line-height: 0;   
+    line-height: 0;  
+    margin-bottom: 15px; 
 }
 
 .itemCount button, h3 {
@@ -137,11 +165,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px dotted black;
-    width: 30%;    
-    margin: 10px;  
+    box-shadow: 10px 5px 5px gray;
+    
+    width: 300px;    
+    margin: 10px;
+    padding-top: 0px;    
 
-    cursor:pointer;
+    cursor:pointer;   
 }
 
 .ItemCard:hover {
@@ -149,14 +179,49 @@
 }
 
 .ItemCard h1 {
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 15px;
 }
-
-
-.ItemCard img {
-    width: 70%;
-    max-height: 50%;  
-    border-radius: 2%;  
+.ItemCard h3{
+    margin-top: 0px;
 }
 
+.ItemCard img {
+    width: 300px;
+    height: 300px;    
+}
+
+/* ------------------- ItemDetail ------------------- */
+
+.ItemDetailContainer {
+    width: 90%;    
+    margin-top: 50px;    
+}
+
+.ItemDetail {    
+    display: grid;
+    grid-template-columns: 55% 40%;
+    box-shadow: 10px 5px 5px gray;    
+}
+
+.textContainer {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    
+}
+
+.textContainer h1, h2 {
+    font-size: 25px;
+}
+
+.textContainer p {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.ItemDetail img {    
+    width: 450px;
+    height: 450px;
+}

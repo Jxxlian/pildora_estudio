@@ -1,13 +1,16 @@
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
+import SecondNavBar from '../SecondNavBar/SecondNavBar'
+import {useState} from 'react'
 
 const NavBar = () => {
- 
+    const[show, setShow] = useState(false)
 
     return (
         <nav className='navBar'>
             <h1>PILDORA <br/> ESTUDIO</h1>
-            <button>Cerámica</button>
+            <button onClick={() => setShow(!show)}>Cerámica</button>
+            {show && <SecondNavBar/>}
             <button>Almohadones</button>
             <button>Contacto</button> 
 
