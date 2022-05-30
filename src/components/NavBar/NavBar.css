@@ -1,15 +1,25 @@
 .App {
-    display: flex;
-    height: 1200px ;
-    
+    display: flex;       
+}
+
+a {
+    text-decoration: none;
+    text-align: center;    
 }
 
 .falseBody {
     display: flex;
     align-items: center;  
     flex-direction: column;  
-    padding-left: 250px;
-    
+    padding-left: 300px;        
+}
+
+/* ------------------- LOAD ------------------- */
+
+
+
+.onLoad img {  
+    width: 50%;    
 }
 
 /* ------------------- NAV BAR ------------------- */
@@ -24,31 +34,47 @@
     position:fixed; 
     top: 0;
     bottom: 0;
-
-
 }
 
 .navBar h1 {
     color: #edfb22;
-    text-shadow: 1px 1px 2px #fbbc1a;
+    text-decoration: none;    
+    /* text-shadow: 1px 1px 2px #fbbc1a; */
     text-align: center;
     font-size: 40px;
     letter-spacing: 10px;
+    text-shadow: 1px 1px 15px #ce9300; 
 }
 
-.navBar button {
+.navBarButton {    
     width: 80%;
     margin-bottom: 15px;
     margin-right: auto;
     margin-left: auto;
-    padding: 10px;
-    background-color: #edfb22;
-    border-radius: 5%;
-    
-    font-weight: bold;    
-    border: 1px solid #fbbc1a;
-    text-shadow: 1px 1px 2px #fbbc1a;
+    padding: 10px;  
+    border: 2px solid #fbbc1a;        
+     
     letter-spacing: 3px;
+    text-decoration: none;
+    color: #edfb22 ;
+    font-weight: bold;
+        
+    cursor: pointer;
+}
+
+.activeButton {
+    width: 80%;
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;  
+    border: 2px solid #fbbc1a;
+    background-color: #edfb22;        
+     
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: black ;
+    font-weight: bold;
     
     cursor: pointer;
 }
@@ -57,9 +83,8 @@
     text-align: center;
     margin-left: 10%;
     margin-top: -20px;
-    
-    
 }
+
 .CartWidget h5, h6 {
     color: white;
     font-size: 15px;    
@@ -97,17 +122,6 @@
     color: #fbbc1a
 }
 
-/* ------------------- SecondNavBar ------------------- */
-
-.SecondNavBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.SecondNavBar button {
-    width: 60%;    
-}
-
 /* ------------------- main ------------------- */
 
 .greeting {
@@ -133,10 +147,10 @@
 }
 
 .itemCount button{
-    background-color: black;
-    color: #fbbc1a ;
+    background-color: #161712;
+    color: #edfb22;
     font-weight: bold;
-    border: 3px outset #edfb22;
+    border: 2px solid #fbbc1a;
     padding: 10px;
     line-height: 0;  
     margin-bottom: 15px; 
@@ -166,6 +180,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 10px 5px 5px gray;
+    color: black;
     
     width: 300px;    
     margin: 10px;
@@ -175,7 +190,7 @@
 }
 
 .ItemCard:hover {
-    color:#fbbc1a;
+    box-shadow: 10px 5px 20px #3d2c00;
 }
 
 .ItemCard h1 {

@@ -1,18 +1,17 @@
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
-import SecondNavBar from '../SecondNavBar/SecondNavBar'
-import {useState} from 'react'
+import { NavLink, Link } from 'react-router-dom'
+
 
 const NavBar = () => {
-    const[show, setShow] = useState(false)
-
+    
     return (
         <nav className='navBar'>
-            <h1>PILDORA <br/> ESTUDIO</h1>
-            <button onClick={() => setShow(!show)}>Cerámica</button>
-            {show && <SecondNavBar/>}
-            <button>Almohadones</button>
-            <button>Contacto</button> 
+            <Link to='/'><h1>PILDORA <br/> ESTUDIO</h1></Link>
+            
+            <NavLink className={({isActive}) => isActive ? 'activeButton' : 'navBarButton'} to='/category/ceramica'>Cerámica</NavLink>            
+            <NavLink className={({isActive}) => isActive ? 'activeButton' : 'navBarButton'} to='/category/almohadon'>Almohadones</NavLink>
+            <NavLink className={({isActive}) => isActive ? 'activeButton' : 'navBarButton'} to='/contacto'>Contacto</NavLink> 
 
             <CartWidget />      
                 
