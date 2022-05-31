@@ -17,21 +17,26 @@ const ItemListContainer = (prop) => {
             getProducts().then(r => {
                 setProduct(r)
             }).finally(() =>{
-                setLoad(false) 
+                 setLoad(false)  
             }) 
         } else {
             getProductbyCategory(category).then( r => {
                 setProduct(r)
             }).finally(() =>{
-                 setLoad(false) 
+                 setLoad(false)
             }) 
         }
     }, [category])
 
     if(load) {
         return(
-            <div className="onLoad">
-                <img src="../../images/load.gif" alt="load gif" />
+            <div class="overlay">
+                <div class="popup">
+                    <img src="../../images/XOsX.gif" alt="load gif" className="onLoad"/>
+                    <h3>Cargando...</h3>
+                    {/* <img src="../../images/SN9H.gif" alt="load gif" className="onLoaddos"/>    */}                 
+                    
+                </div>
             </div>
         )
     } else {

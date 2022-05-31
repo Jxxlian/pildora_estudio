@@ -23,8 +23,12 @@ const ItemDetailCointainer = () => {
     
     if(load) {
         return(
-            <div className="onLoad">
-                <img src="../../images/load.gif" alt="load gif" />
+            <div className="overlay">
+                <div>
+                    <img src="../../images/XOsX.gif" alt="load gif"/>
+                    <h3>Cargando...</h3>                    
+                    
+                </div>
             </div>
         )
     } else {
