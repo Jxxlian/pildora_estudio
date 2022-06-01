@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
 const ItemCount = (prop) => {
-    const [count, setCount] = useState(Number(prop.initial))
+    const [count, setCount] = useState(Number(prop.initial))    
 
     const add = () => {        
         count < prop.stock && setCount(count + 1)
@@ -19,7 +19,7 @@ const ItemCount = (prop) => {
             <button onClick={add}>+</button>
             </div>                
 
-            <button>Agregar a mi compra</button>
+            <button onClick={() => prop.handleonAdd(count)}>Agregar a mi compra</button>
         </div>
 
     )

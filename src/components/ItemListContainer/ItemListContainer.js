@@ -30,12 +30,10 @@ const ItemListContainer = (prop) => {
 
     if(load) {
         return(
-            <div class="overlay">
-                <div class="popup">
-                    <img src="../../images/XOsX.gif" alt="load gif" className="onLoad"/>
-                    <h3>Cargando...</h3>
-                    {/* <img src="../../images/SN9H.gif" alt="load gif" className="onLoaddos"/>    */}                 
-                    
+            <div className="overlay">
+                <div>
+                    <img src="../../images/XOsX.gif" alt="load gif"/>
+                    <h3>Cargando...</h3>                                        
                 </div>
             </div>
         )

@@ -26,8 +26,7 @@ const ItemDetailCointainer = () => {
             <div className="overlay">
                 <div>
                     <img src="../../images/XOsX.gif" alt="load gif"/>
-                    <h3>Cargando...</h3>                    
-                    
+                    <h3>Cargando...</h3>                                        
                 </div>
             </div>
         )
