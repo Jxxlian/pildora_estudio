@@ -55,8 +55,6 @@ a {
     width: 50%;
 }
 
-
-
 /* ------------------- NAV BAR ------------------- */
 
 .navBar{
@@ -95,6 +93,10 @@ a {
     font-weight: bold;
         
     cursor: pointer;
+}
+
+.navBarButton:hover {
+    background-color: #000000;
 }
 
 .activeButton {
@@ -189,17 +191,9 @@ a {
     padding: 10px;
     line-height: 0;  
     margin-bottom: 15px; 
+    box-shadow: 8px 5px 10px grey;
 
     cursor: pointer;
-}
-
-.finalize {
-    background-color: #161712;
-    color: #edfb22;
-    font-weight: bold;
-    border: 2px solid #fbbc1a;
-    padding: 10px 15px;
-    margin-bottom: 15px;    
 }
 
 .itemCount button, h3 {
@@ -216,8 +210,7 @@ a {
 
 .container-items {
     display: flex;
-    flex-direction: wrap;
-    
+    flex-direction: wrap;    
 }
 
 .ItemCard {
@@ -227,7 +220,6 @@ a {
     justify-content: center;
     box-shadow: 10px 5px 5px gray;
     color: black;
-    
     
     width: 300px;    
     margin: 10px;
@@ -263,7 +255,7 @@ a {
 .ItemDetail {    
     display: grid;
     grid-template-columns: 55% 40%;
-    box-shadow: 10px 5px 5px gray;    
+    box-shadow: 20px 10px 10px gray;    
 }
 
 .textContainer {    
@@ -286,6 +278,32 @@ a {
 .ItemDetail img {    
     width: 450px;
     height: 450px;
+}
+
+.buttonsHelpers-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;      
+    align-items: center;   
+}
+
+.buttonsHelpers {
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 5px;
+
+    background-color: #161712;
+    color: #edfb22;    
+    border: 2px solid #fbbc1a;
+    box-shadow: 5px 10px 6px grey;
+        
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.buttonsHelpers:hover {
+    background-color: #000000;
 }
 
 /* ------------------- Cart ------------------- */
@@ -345,3 +363,37 @@ a {
             color: #edfb22;
             border: 2px solid #fbbc1a;
         }
+
+        .subtotal {
+            font-weight: bolder;
+        }
+
+.nothingToBuyYet {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+    height: 600px;    
+}
+
+.nothingToBuyYet h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.nothingToBuyYet button {
+    width: 70%;
+    margin-bottom: 15px; 
+    padding: 20px;
+
+    letter-spacing: 8px;
+    font-size: 18px;
+    font-weight: bold;
+
+    background-color: #161712;
+    color: #edfb22;
+    border: 2px solid #fbbc1a;
+    box-shadow: 10px 5px 5px rgb(129, 129, 129);
+    
+    cursor: pointer;
+}

@@ -1,9 +1,14 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const CartContext = createContext()
 
 export const CartContextProvider = ({children}) => {
     const [cart, setCart ] = useState([])
+    const [subtotal, setSubtotal ] = useState(0)
+    
+    useEffect(() => {
+        updateSubtotal()        
+    }, [cart])
 
     const addItem = (product) => {
         if(isInCart(product.id)) {
@@ -46,11 +51,26 @@ export const CartContextProvider = ({children}) => {
 
     const isInCart = (id) => {
         return cart.some ( p => p.id === id)
-    }
+    }  
 
+    const updateSubtotal = () => {
+        let add = 0
+            cart.forEach (p => {
+                add += p.price * p.quantity
+            })
+    setSubtotal(add)
+    }
+    
 
     return(
-        <CartContext.Provider value={{addItem, getQuantityPurchased, getItemQuantity, removeItem, clearAll, cart}}>
+        <CartContext.Provider value={{addItem, 
+                                    getQuantityPurchased, 
+                                    getItemQuantity, 
+                                    removeItem, 
+                                    clearAll,                                     
+                                    subtotal, 
+                                    cart                                    
+                                    }}>
             {children}
         </CartContext.Provider>
     )
