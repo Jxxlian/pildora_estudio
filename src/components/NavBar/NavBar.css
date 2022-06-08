@@ -1,0 +1,347 @@
+a {
+    text-decoration: none;
+    text-align: center;    
+}
+
+.falseBody {
+    display: flex;
+    align-items: center;  
+    flex-direction: column;  
+    padding-left: 250px;       
+}
+
+/* ------------------- LOAD ------------------- */
+
+ .overlay {
+    background-color: rgba(0,0,0,.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+} 
+    .overlay div {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        flex-direction: column;     
+    }
+
+    .overlay img  {      
+        width: 30%; 
+        margin-bottom: 0;  
+    }
+    
+    .overlay h3 {
+        color: white;
+    }
+
+/* ------------------- Error  ------------------- */
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.error h1 {
+    margin-top: 50px;
+}
+
+.error img {
+    width: 50%;
+}
+
+
+
+/* ------------------- NAV BAR ------------------- */
+
+.navBar{
+    display: flex;
+    flex-direction: column;           
+    background-color: #161712;
+    padding: 0 15px;
+
+    /* con esto fijo el menú lateral */
+    position:fixed; 
+    top: 0;
+    bottom: 0;
+}
+
+.navBar h1 {
+    color: #edfb22;
+    text-decoration: none;    
+    /* text-shadow: 1px 1px 2px #fbbc1a; */
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 10px;
+    text-shadow: 1px 1px 15px #ce9300; 
+}
+
+.navBarButton {    
+    width: 80%;
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;  
+    border: 2px solid #fbbc1a;        
+     
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: #edfb22 ;
+    font-weight: bold;
+        
+    cursor: pointer;
+}
+
+.activeButton {
+    width: 80%;
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;  
+    border: 2px solid #fbbc1a;
+    background-color: #edfb22;        
+     
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: black ;
+    font-weight: bold;
+    
+    cursor: pointer;
+}
+
+.CartWidget {    
+    text-align: center;
+    margin-left: 10%;
+    margin-top: -20px;
+}
+
+.CartWidget h5, h6 {
+    color: white;
+    font-size: 15px;    
+}
+
+.CartWidget h5{    
+    margin-bottom: 0;    
+}
+
+.CartWidget h6{
+    display: inline;    
+}
+
+.CartWidget img {
+    width: 50px;    
+    transform: scaleX(-1); /* para rotar horizontalmente la imagen */    
+}
+
+.followMe {
+    position: absolute;
+    bottom: 0;      
+    right: 0;
+    left: 0;    
+    text-align: center;
+}
+
+.followMe h3 {
+    font-size: 18px; 
+    color: white;  
+    font-style: italic; 
+}
+
+.followMe h3 a {
+    text-decoration: none;   
+    color: #fbbc1a
+}
+
+/* ------------------- main ------------------- */
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.greetingTitle {
+    font-size: 50px;
+}
+
+/* ------------------- ItemCount ------------------- */
+
+.itemCount { 
+    display: flex;
+    flex-direction: column;      
+    align-items: center;    
+}
+
+.itemCount div {
+    display: flex;    
+}
+
+.itemCount button {
+    background-color: #161712;
+    color: #edfb22;
+    font-weight: bold;
+    border: 2px solid #fbbc1a;
+    padding: 10px;
+    line-height: 0;  
+    margin-bottom: 15px; 
+
+    cursor: pointer;
+}
+
+.finalize {
+    background-color: #161712;
+    color: #edfb22;
+    font-weight: bold;
+    border: 2px solid #fbbc1a;
+    padding: 10px 15px;
+    margin-bottom: 15px;    
+}
+
+.itemCount button, h3 {
+    height: 30px;    
+}
+
+.itemCount h3 {    
+    width: 100px;    
+    margin-top: 0;
+    text-align: center;
+}
+
+/* ------------------- ItemCard ------------------- */
+
+.container-items {
+    display: flex;
+    flex-direction: wrap;
+    
+}
+
+.ItemCard {
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 5px 5px gray;
+    color: black;
+    
+    
+    width: 300px;    
+    margin: 10px;
+    padding-top: 0px;    
+
+    cursor:pointer;   
+}
+
+.ItemCard:hover {
+    box-shadow: 10px 5px 20px #3d2c00;
+}
+
+.ItemCard h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.ItemCard h3{
+    margin-top: 0px;
+}
+
+.ItemCard img {
+    width: 300px;
+    height: 300px;    
+}
+
+/* ------------------- ItemDetail ------------------- */
+
+.ItemDetailContainer {
+    width: 80%;    
+    margin-top: 50px;    
+}
+
+.ItemDetail {    
+    display: grid;
+    grid-template-columns: 55% 40%;
+    box-shadow: 10px 5px 5px gray;    
+}
+
+.textContainer {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    
+}
+
+.textContainer h1, h2 {
+    font-size: 25px;
+}
+
+.textContainer p {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.ItemDetail img {    
+    width: 450px;
+    height: 450px;
+}
+
+/* ------------------- Cart ------------------- */
+
+.cartContainer {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-top: 20px;
+       
+}
+    .cartStyle {
+        width: 800px;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        
+    }       
+        .cartStyle tr{
+            border: 1px dotted #161712 ; 
+        }
+
+        .cartStyle td {
+            width: 20%;                        
+            padding: 10px;
+            text-align: center;            
+        }
+
+        .cartStyle button {
+            width: 20%; 
+            border: none;
+            background-color: none;
+            border-radius: 50%;
+        }      
+
+        .cartStyle button img {
+            width: 100%;
+            
+        }
+        
+        .tableHeader {
+            background-color: #161712;
+            color: #edfb22;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .DeleteAll {
+            width: 50%;
+            margin-bottom: 15px; 
+            padding: 5px;
+
+            letter-spacing: 5px;
+            font-size: 15px;
+            font-weight: bold;
+
+            background-color: #161712;
+            color: #edfb22;
+            border: 2px solid #fbbc1a;
+        }
