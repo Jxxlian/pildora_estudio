@@ -24,7 +24,7 @@ const ItemDetail = ({item}) => {
            <img src={pictureURL} alt="imagen"/>
            
            <div className="textContainer">
-                <h1>{id} - {title}</h1>           
+                <h1>{title}</h1>           
                 <p>{description}</p>
                 <h2>${price}</h2>   
 

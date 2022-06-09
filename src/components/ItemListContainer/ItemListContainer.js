@@ -1,7 +1,8 @@
 import ItemList from "../ItemList/ItemList"
-import { getProductbyCategory, getProducts } from "../../asyncmonk"
 import {useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { getDocs, collection } from 'firebase/firestore'
+import { db } from '../../service/firebase'
 
 const ItemListContainer = (prop) => {
     const [products, setProduct] = useState([])
@@ -13,19 +14,18 @@ const ItemListContainer = (prop) => {
     useEffect(() => {
         setLoad(true)
 
-        if(category === undefined) {
-            getProducts().then(r => {
-                setProduct(r)
-            }).finally(() =>{
-                 setLoad(false)  
-            }) 
-        } else {
-            getProductbyCategory(category).then( r => {
-                setProduct(r)
-            }).finally(() =>{
-                 setLoad(false)
-            }) 
-        }
+        getDocs(collection(db, 'items')).then(response => {
+            console.log(response)
+            const product = response.docs.map(doc => {
+                return { id: doc.id, ...doc.data()}
+            })
+            console.log(product)
+            setProduct(product)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() =>{
+            setLoad(false)
+        }) 
     }, [category])
 
     if(load) {

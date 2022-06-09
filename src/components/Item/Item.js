@@ -5,7 +5,7 @@ const Item = ({id, title, price, pictureURL}) => {
         <Link to={`/detail/${id}`}>
             <div className="ItemCard">            
                     <img src={pictureURL} alt='imagen'></img>
-                    <h1>{id}. {title}</h1>                                
+                    <h1>{title}</h1>                                
                     <h3>${price}</h3>                        
             </div>
         </Link>

@@ -1,7 +1,8 @@
-import { getProduct } from "../../asyncmonk"
 import { useState, useEffect } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
+import { getDoc, doc } from 'firebase/firestore'
+import { db } from '../../service/firebase'
  
 
 const ItemDetailCointainer = () => {
@@ -11,15 +12,18 @@ const ItemDetailCointainer = () => {
     const { productID } = useParams()   
     
 
-    useEffect(() => {
+    useEffect(() => {        
         setLoad(true)
 
-        getProduct(productID).then(r => {
-            setItem(r)            
+        getDoc(doc(db, 'items', productID)).then(response => {
+            const product ={ id: response.id, ...response.data()}            
+            setItem(product)
+        }).catch(error => {
+            console.log(error)
         }).finally(() =>{
-                setLoad(false)
-            }) 
-    }, [productID])
+            setLoad(false)
+        })
+    },[productID]) 
     
     if(load) {
         return(
