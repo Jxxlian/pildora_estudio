@@ -11,11 +11,8 @@ const ItemDetail = ({item}) => {
 
     const valueInitial = getItemQuantity(id)
     
-    const onAdd = (quantity) => {
-        console.log('agrego al carrito')
-        console.log(quantity)
-        setQuantity(quantity)    
-        console.log(id, title, price, quantity)
+    const onAdd = (quantity) => {       
+        setQuantity(quantity)            
         addItem({id, title, price, quantity})        
     }    
 
