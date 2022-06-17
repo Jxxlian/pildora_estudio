@@ -4,6 +4,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Error from './components/Error/Error'
 import Cart from './components/Cart/Cart'
 import FormPurchase from './components/FormPurchase/FormPurchase'
+import SuccessfulPurchase from './components/SuccessfulPurchase/SuccessfulPurchase'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartContextProvider } from './Context/CartContext'
 
@@ -25,7 +26,10 @@ function App() {
                   
                   <Route path='/detail/:productID' element= { <ItemDetailContainer /> }  />                  
                   <Route path='/Cart' element= { <Cart />} />
-                  <Route path='/formPurchase/:idCompra' element= { <FormPurchase />} />
+                  <Route path='/formPurchase' element= { <FormPurchase />} />
+                  <Route path='/SuccessfulPurchase' element= { <SuccessfulPurchase/>} />
+
+                  
                 
                   <Route path='*' element={ <Error />} />
                 </Routes>
