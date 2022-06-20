@@ -1,35 +1,16 @@
 import ItemList from "../ItemList/ItemList"
-import {useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getDocs, collection, query, where } from 'firebase/firestore'
-import { db } from '../../service/firebase'
+import { getProducts } from "../../service/firebase/API"
+import { useAPI } from "../../Hooks/useAPI"
+
 
 const ItemListContainer = (prop) => {
-    const [products, setProduct] = useState([])
-    const [load, setLoad] = useState(true)
-
+    
     const { category } = useParams()
     
-
-    useEffect(() => {
-        setLoad(true)
-
-        const filter = category 
-        ? query(collection(db, 'items'), where('category', "==",     category))
-        : collection(db, 'items')
-
-        getDocs(filter).then(response => {            
-            const product = response.docs.map(doc => {
-                return { id: doc.id, ...doc.data()}
-            })           
-            setProduct(product)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() =>{
-            setLoad(false)
-        }) 
-    }, [category])
-
+    /* acá está la lógica donde consulto a la BD para mostrar productos x categoría */
+    const {load, inf } = useAPI(() => getProducts(category), [category])
+    
     if(load) {
         return(
             <div className="overlay">
@@ -46,7 +27,7 @@ const ItemListContainer = (prop) => {
             <h1 className="greetingTitle">{prop.greeting}</h1>
                 
             <div className="container-items">
-            <ItemList products={products}/>
+            <ItemList products={inf}/>
             </div>                                   
 
         </div>

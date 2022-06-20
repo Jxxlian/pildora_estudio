@@ -1,29 +1,15 @@
-import { useState, useEffect } from "react"
+
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
-import { getDoc, doc } from 'firebase/firestore'
-import { db } from '../../service/firebase'
- 
+import { getProductById } from "../../service/firebase/API"
+import { useAPI } from "../../Hooks/useAPI"
 
 const ItemDetailCointainer = () => {
-    const [item, setItem] = useState({})
-    const [load, setLoad] = useState(true)
-
+   
     const { productID } = useParams()   
-    
 
-    useEffect(() => {        
-        setLoad(true)
-
-        getDoc(doc(db, 'items', productID)).then(response => {
-            const product ={ id: response.id, ...response.data()}            
-            setItem(product)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() =>{
-            setLoad(false)
-        })
-    },[productID]) 
+    /* acá está la lógica para consultar a la BD  */
+    const { load, inf } = useAPI(() => getProductById(productID), productID)
     
     if(load) {
         return(
@@ -37,7 +23,7 @@ const ItemDetailCointainer = () => {
     } else {
     return (
         <div className="ItemDetailContainer">
-            <ItemDetail item={item} /> 
+            <ItemDetail item={inf} /> 
                        
         </div>
     )}

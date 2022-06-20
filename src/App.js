@@ -5,8 +5,10 @@ import Error from './components/Error/Error'
 import Cart from './components/Cart/Cart'
 import FormPurchase from './components/FormPurchase/FormPurchase'
 import SuccessfulPurchase from './components/SuccessfulPurchase/SuccessfulPurchase'
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartContextProvider } from './Context/CartContext'
+
 
 
 function App() {
@@ -28,9 +30,9 @@ function App() {
                   <Route path='/Cart' element= { <Cart />} />
                   <Route path='/formPurchase' element= { <FormPurchase />} />
                   <Route path='/SuccessfulPurchase' element= { <SuccessfulPurchase/>} />
-
                   
-                
+
+                                  
                   <Route path='*' element={ <Error />} />
                 </Routes>
               </div>

@@ -25,8 +25,6 @@ const ItemDetail = ({item}) => {
                 <p>{description}</p>
                 <h2>${price}</h2>   
 
-                
-
                 {quantity > 0 ? 
                 <ButtonsHelpers />
                 : <ItemCount stock='5' initial={valueInitial} handleonAdd={onAdd}/>} 
