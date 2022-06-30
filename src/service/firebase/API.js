@@ -68,13 +68,17 @@ export const createOrder = (Obj, cart) => {
     
 }
 
-
+/* si uso este código me devuelve no encuentra coincidencia con el ID */
 
 export const getPurchaseByID = (idData) => {
-    getDoc(doc(db, myCollections.order, idData)).then(response => {
-        const myOrder = {id: response.id, ...response.data()}
-        console.log(myOrder)
-    })
-    
+   getDocs(query(collection(db,myCollections.order), where('doc.id', '==', idData))).then(response => {
+    console.log(response)
+   })
    
 } 
+/*   si uso este código, me encuentra el ID pero no tengo el resto de los datos del producto 
+
+getDoc(doc(db, myCollections.order, idData)).then(response => {
+        const myOrder = {id: response.id, ...response.data()}
+        console.log(myOrder)
+    })    */
