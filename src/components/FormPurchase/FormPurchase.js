@@ -1,4 +1,9 @@
 import { useForm } from '../../Hooks/useForm'
+import { useContext } from 'react'
+import CartContext from '../../Context/CartContext'
+
+
+
   
 const initialValue = {
     name:"",
@@ -36,14 +41,17 @@ const validateForm = (form) =>{
     return error
 }
 
-const FormPurchase = () => { 
+const FormPurchase = () => {   
 
     /* desestructuro el customeHook */
     const {form, error, idPurchase, handleBlur, handleSubmit, handleChange} = useForm(initialValue, validateForm)
+    
+    const { clearAll  } = useContext(CartContext)  
    
         if(!idPurchase) 
         {
         return (
+            
             <div className="FormPurchase-container">                
                     <h1>Ya casi terminamos</h1>
                     <h3>Por favor completá estos datos para finalizar la compra</h3>
@@ -65,18 +73,23 @@ const FormPurchase = () => {
                             {/* de esta forma valido que los inputs estén llenos y el {} error este vacio. 
                             Solo así se puede apretar el botón, confirmar la compra y generar la orden*/
                             form.confirmEmail !== '' && Object.keys(error).length === 0 
-                            ? <input className="formButton"type="submit" value="Confirmar compra"></input>
+                            ? <input className="formButton" type="submit" value="Confirmar compra"></input>
                             : <h4>Es necesario que completes todos los campos para que puedas finalizar la compra</h4>
                             }                                              
                     </form>                
-            </div>
-        )} else {
-            return (
-            <div className='confirmID'>                
-                <h1> La compra quedó registrada  bajo la gestión nº {idPurchase}</h1>                
-                <img src="../../images/gatito.gif" alt="gatito"/>
-            </div>
-        )}
+            </div>   
+                                
+                )} else {
+                clearAll()
+                return (    
+                                
+                <div className='confirmID'>                
+                    <img src="../../images/gatito.gif" alt="gatito"/>
+                    <h1> La compra quedó registrada <br/> bajo la gestión nº {idPurchase}</h1>                                    
+                </div>
+                 
+            )}
+    
 }
    
 

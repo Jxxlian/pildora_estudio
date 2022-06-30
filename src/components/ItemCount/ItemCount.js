@@ -3,10 +3,10 @@ import {useState} from 'react'
 const ItemCount = (prop) => {
     const [count, setCount] = useState(Number(prop.initial)) 
     
-    const { handleonAdd } = prop
+    const { handleonAdd, stock } = prop
 
     const add = () => {        
-        count < prop.stock && setCount(count + 1)
+        count < stock && setCount(count + 1)
     }           
 
     const subtract = () => {

@@ -5,9 +5,10 @@ import { createOrder } from "../service/firebase/API"
 export const useForm = (initialValue, validateForm) => {
     const [form, setForm] = useState(initialValue)
     const [error, setError] = useState({})
-
-    const { cart, subtotal  } = useContext(CartContext)   
-    const [idPurchase, setIdPurchase ] = useState()
+    
+    
+    const { cart, subtotal } = useContext(CartContext)   
+    const [idPurchase, setIdPurchase ] = useState()  
 
     
     const handleChange = (e) => {
@@ -22,6 +23,7 @@ export const useForm = (initialValue, validateForm) => {
     /* al hacer click en submit se crea la orden */
     const handleSubmit = (e) => {
         e.preventDefault()
+       
         const objPurchase = {
             buyer: {
                 name: form.name,
@@ -31,16 +33,16 @@ export const useForm = (initialValue, validateForm) => {
                 item: cart,
                 date: Date(),
                 total: subtotal                            
-        }      
-        console.log('hice click y creé orden')        
-           
-        createOrder(objPurchase).then(response => {
-            setIdPurchase(response)            
-        })        
+        }                     
+                
+        createOrder(objPurchase, cart).then(response => {
+            setIdPurchase(response)                         
+        })               
+        
     }
 
     return {
-        form, error, idPurchase,
+        form, error, idPurchase, 
         handleBlur, handleSubmit, handleChange
     }
 

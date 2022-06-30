@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import CartContext from "../../Context/CartContext"
 import DeleteAll from "../DeleteAll/DeleteAll"
+
 import { Link } from "react-router-dom"
 
 const Cart = () => {
@@ -8,16 +9,18 @@ const Cart = () => {
 
     if(cart.length === 0 ){
         return (
+            
             <div className="nothingToBuyYet">
                 <h1>Aún no has agregado nada a tu carrito</h1>
-                <Link to='/'><button>Haz click aquí para ver nuestros productos</button></Link>
+                <Link to='/'><button>Ver nuestros productos</button></Link>
             </div>
+            
         )
     } else {
         return  <>
                 <h1>Tu compra</h1>
                 <div className="cartContainer">
-                    <table  className="cartStyle">
+                    <table className="cartStyle">
                          <tr className="tableHeader">
                             <td>Producto</td>
                             <td>Precio</td>
@@ -27,23 +30,27 @@ const Cart = () => {
                     {cart.map(prod =>                                       
                         <tr key={prod.id}>
                             <td>{prod.title}</td>
-                            <td>$ {prod.price}</td>
-                            <td>Cantidad: {prod.quantity}</td>
+                            <td>${prod.price}</td>
+                            <td>Cantidad:{prod.quantity}</td>
                             <td><button onClick={() => removeItem(prod.id)}><img src="../../images/eliminar.png" alt="imagen de cruz roja" /></button></td>                                          
                         </tr>                   
                     )}
                         <tr className="subtotal">
-                            <td></td>  {/* Queda vacio solo para ocupa un lugar en la tabla */}
+                            <td style={{color: 'white'}}>.</td>  {/* Queda vacio solo para ocupa un lugar en la tabla */}
                             <td>Subtotal</td>                        
                             <td>$ { subtotal }</td>
                         </tr>
                     </table>
-
+                    
+                    <div className="container-buttons-table">
                     <DeleteAll />                    
                     
-                    <Link className="DeleteAll" to='/formPurchase'>Hacer click para completar datos de envío</Link>                                       
+                    <Link className="DeleteAll" to='/formPurchase'>Completar datos de envío</Link>                                       
+                    </div>
                     
                 </div>
+                
+                
             </>
 }}
 

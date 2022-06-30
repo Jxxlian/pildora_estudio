@@ -1,5 +1,5 @@
 # Pildora Etudio
-#### Proyecto de e-commerce
+## Proyecto de e-commerce
 
 Para poder inicializar este proyecto deberas clonarlo, ejecutar 'npm start' en la consola y se visualizará en el http://localhost:3000
 

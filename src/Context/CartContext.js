@@ -44,9 +44,10 @@ export const CartContextProvider = ({children}) => {
       return i
     }
 
+    /* Hago que el value pueda empezar en 0 porque sino cuando no hay stock del producto ocmienza en 1 aunque no tenga disponible esa cantidad */
     const getItemQuantity = (id) => {
         const product = cart.find(p => p.id === id)
-        return product ? product.quantity : 1
+        return product ? product.quantity : 0
     }
 
     const isInCart = (id) => {

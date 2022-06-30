@@ -5,7 +5,7 @@ import ButtonsHelpers from "../ButtonsHelpers/ButtonsHelpers"
 
 const ItemDetail = ({item}) => {  
     const [ quantity, setQuantity ] = useState()
-    const { id, title, description, price, pictureURL, } = item 
+    const { id, title, description, price, pictureURL, stock } = item 
 
     const { addItem, getItemQuantity } = useContext(CartContext)
 
@@ -15,6 +15,7 @@ const ItemDetail = ({item}) => {
         setQuantity(quantity)            
         addItem({id, title, price, quantity})        
     }    
+    
 
     return (
         <div className="ItemDetail">
@@ -27,7 +28,7 @@ const ItemDetail = ({item}) => {
 
                 {quantity > 0 ? 
                 <ButtonsHelpers />
-                : <ItemCount stock='5' initial={valueInitial} handleonAdd={onAdd}/>} 
+                : <ItemCount stock={stock} initial={valueInitial} handleonAdd={onAdd}/>} 
            </div>            
            
         </div>
