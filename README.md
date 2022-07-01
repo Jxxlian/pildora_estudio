@@ -25,6 +25,7 @@ Para que el proyecto funcione correctamente es necesario conectarlo a variables 
 Podes ver [env.example](https://github.com/Jxxlian/pildora_estudio/blob/PildoraFinal/.env.example) como ejemplo.
 
  ## Test App
+ [Vercel Test](https://pildora-gamma-flax.vercel.app/)
 
 
  ## Vista previa al proyecto
