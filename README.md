@@ -29,6 +29,6 @@ Podes ver [env.example](https://github.com/Jxxlian/pildora_estudio/blob/PildoraF
 
 
  ## Vista previa al proyecto
-![Funcionamiento de la web](./public/images/screenrecording.gif  "Funcionamiento de la web")
+![Funcionamiento de la web](./public/images/Pildora[ScreenRecorder].gif )
 
 
