@@ -21,7 +21,7 @@ export const getProductById = (productID) => {
     return new Promise ((resolve, reject) => {
         getDoc(doc(db, myCollections.product, productID)).then(response => {
             const product ={ id: response.id, ...response.data()}            
-            resolve(product)
+            resolve(product)            
         }).catch(error => {
             reject(error)
         })
@@ -69,16 +69,33 @@ export const createOrder = (Obj, cart) => {
 }
 
 
+/* getDocs(filter).then(response => {            
+    const product = response.docs.map(doc => {
+        return { id: doc.id, ...doc.data()}
+    }) */
 
 export const getPurchaseByID = (idData) => {
-    /*   si uso este código, dice que no puedo usar filter en un objeto */
+    return new Promise ((resolve, reject) => {
+            
+        getDoc(doc(db, myCollections.order, idData)).then(response => {
+           
+        const elementFound = response.data()
+        const { item } = elementFound        
+        
+         resolve(item) 
+    }).catch(error => {
+        reject(error)
+    })
+      
+
+})}
+
+ /*   si uso este código, dice que no puedo usar filter en un objeto 
 
    getDocs(collection(db, myCollections.order)).then(response => {
     const filtrado = response.filter(order => order.id === idData)
     console.log(filtrado)
-   })
-   
-} 
+   })*/
 
 /*   si uso este código, me encuentra el ID pero no tengo el resto de los datos del producto 
 
@@ -86,6 +103,7 @@ getDoc(doc(db, myCollections.order, idData)).then(response => {
         const myOrder = {id: response.id, ...response.data()}
         console.log(myOrder)
     })    */
+
 /* si uso este código me devuelve no encuentra coincidencia con el ID
     getDocs(query(collection(db,myCollections.order), where('doc.id', '==', idData))).then(response => {
         console.log(response)

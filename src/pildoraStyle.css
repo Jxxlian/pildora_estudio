@@ -557,11 +557,40 @@ a {
     display: none;
 }
 
+/* ------------------- MyPurchase ------------------- */
+
+.myPurchase-result {
+    border: 2px dotted black;
+    width: 90%;
+    margin-top: 5rem;
+    padding: 2rem;    
+}
+
+.myPurchase-result h3 {
+    width: 80%;
+    font-size: 2rem;    
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.myPurchase-result h3 i {
+    color: #fbbc1a;
+}
+
+.myPurchase-result ul {
+    list-style: none;    
+    padding: 0;    
+    font-size: 1.5rem;
+    text-align: center;
+    font-style: italic;    
+}
+
 /* -------------------------------------------------------------------------------------------------------- 
                                                         MEDIA 
    ------------------------------------------------------------------------------------------------------ */
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
 
     .falseBody {        
         padding-left: 0;        
@@ -678,14 +707,14 @@ a {
     height: 100%;   
 }
 
-.confirmID h1 {
-    margin-top: 2rem;    
-}
+    .confirmID h1 {
+        margin-top: 2rem;    
+    }
 
-.confirmID img {
-    margin-top: 2rem;  
-    width: 15rem;
-}
+    .confirmID img {
+        margin-top: 2rem;  
+        width: 15rem;
+    }
 
 /* -----------------------  Error ----------------------- */
 
@@ -702,15 +731,32 @@ a {
     background-color: #161712; 
 } 
 
-.footerMobile h3 {
-    margin: auto auto;  
-    font-size: 1rem; 
-    color: white;  
-    font-style: italic;  
+    .footerMobile h3 {
+        margin: auto auto;  
+        font-size: 1rem; 
+        color: white;  
+        font-style: italic;  
+    }
+
+    .footerMobile h3 a {    
+        color: #fbbc1a 
+    }
+
+/* ------------------- MyPurchase ------------------- */
+
+.myPurchase-result {
+    margin: 1rem;    
+    padding: 0rem;
 }
 
-.footerMobile h3 a {    
-    color: #fbbc1a 
-}
+    .myPurchase-result h3 {
+        font-size: 1.5rem;
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 3.5rem;
+    }
 
+    .myPurchase-result ul {
+        font-size: 1.2rem;
+    }
 } /* Cierre del media */

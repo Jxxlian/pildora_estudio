@@ -38,7 +38,7 @@ const Cart = () => {
                         <tr className="subtotal">
                             <td style={{color: 'white'}}>.</td>  {/* Queda vacio solo para ocupa un lugar en la tabla */}
                             <td>Subtotal</td>                        
-                            <td>$ { subtotal }</td>
+                            <td>${ subtotal }</td>
                         </tr>
                     </table>
                     
